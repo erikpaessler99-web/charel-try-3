@@ -328,7 +328,24 @@ export class Obstacle {
   createImageObstacle() {
     // Load image as texture and create a sprite
     const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load(this.imageUrl);
+    
+    // Random size between 3 and 6 units
+    const size = 3 + Math.random() * 3;
+    
+    // Load texture with error handling
+    const texture = textureLoader.load(
+      this.imageUrl,
+      // onLoad
+      () => {
+        console.log('Image loaded successfully:', this.imageUrl);
+      },
+      // onProgress
+      undefined,
+      // onError
+      (error) => {
+        console.error('Error loading image:', this.imageUrl, error);
+      }
+    );
     
     const spriteMaterial = new THREE.SpriteMaterial({
       map: texture,
@@ -336,23 +353,19 @@ export class Obstacle {
     });
     
     const sprite = new THREE.Sprite(spriteMaterial);
-    
-    // Random size between 3 and 6 units
-    const size = 3 + Math.random() * 3;
     sprite.scale.set(size, size, 1);
     
     this.group.add(sprite);
     this.sprite = sprite;
     
-    // Add a subtle glow effect around the image
-    const glowGeometry = new THREE.PlaneGeometry(size * 1.2, size * 1.2);
-    const glowMaterial = new THREE.MeshBasicMaterial({
+    // Add a subtle glow effect around the image (also as sprite so it faces camera)
+    const glowMaterial = new THREE.SpriteMaterial({
       color: 0xffffff,
       transparent: true,
-      opacity: 0.2,
-      side: THREE.DoubleSide
+      opacity: 0.2
     });
-    const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+    const glow = new THREE.Sprite(glowMaterial);
+    glow.scale.set(size * 1.2, size * 1.2, 1);
     this.group.add(glow);
     this.glow = glow;
   }
