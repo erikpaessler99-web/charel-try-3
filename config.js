@@ -17,8 +17,8 @@ export const CONFIG = {
   OBSTACLE_MAX_INTERVAL: 4.5,
   
   // Image Obstacles (new)
-  IMAGE_OBSTACLE_MIN_INTERVAL: 1.2,  // Was 3.0, reduced by 60%
-  IMAGE_OBSTACLE_MAX_INTERVAL: 2.4,  // Was 6.0, reduced by 60%
+  IMAGE_OBSTACLE_MIN_INTERVAL: 0.8,  // Spawn every 0.8-1.5 seconds (VERY frequent)
+  IMAGE_OBSTACLE_MAX_INTERVAL: 1.5,
   IMAGE_OBSTACLE_URLS: [
     'https://placekitten.com/200/200',
     'https://placekitten.com/200/202',
