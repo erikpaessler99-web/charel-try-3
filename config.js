@@ -20,16 +20,16 @@ export const CONFIG = {
   IMAGE_OBSTACLE_MIN_INTERVAL: 3.0,
   IMAGE_OBSTACLE_MAX_INTERVAL: 6.0,
   IMAGE_OBSTACLE_URLS: [
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s'
+    'https://picsum.photos/200/200?random=1',
+    'https://picsum.photos/200/200?random=2',
+    'https://picsum.photos/200/200?random=3',
+    'https://picsum.photos/200/200?random=4',
+    'https://picsum.photos/200/200?random=5',
+    'https://picsum.photos/200/200?random=6',
+    'https://picsum.photos/200/200?random=7',
+    'https://picsum.photos/200/200?random=8',
+    'https://picsum.photos/200/200?random=9',
+    'https://picsum.photos/200/200?random=10'
   ],
   
   // Door
@@ -44,4 +44,5 @@ export const CONFIG = {
   // Collision
   COLLISION_RADIUS: 1.5
 };
+
 
