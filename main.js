@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { CONFIG } from './config.js';
-import { Carpet } from './carpet.js';
+import { Carpet } from './Carpet.js';
 import { InputController } from './InputController.js';
 import { Obstacle } from './Obstacle.js';
 import { Door } from './Door.js';
