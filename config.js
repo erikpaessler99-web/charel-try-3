@@ -17,19 +17,19 @@ export const CONFIG = {
   OBSTACLE_MAX_INTERVAL: 4.5,
   
   // Image Obstacles (new)
-  IMAGE_OBSTACLE_MIN_INTERVAL: 3.0,
-  IMAGE_OBSTACLE_MAX_INTERVAL: 6.0,
+  IMAGE_OBSTACLE_MIN_INTERVAL: 1.2,  // Was 3.0, reduced by 60%
+  IMAGE_OBSTACLE_MAX_INTERVAL: 2.4,  // Was 6.0, reduced by 60%
   IMAGE_OBSTACLE_URLS: [
-    'https://picsum.photos/200/200?random=1',
-    'https://picsum.photos/200/200?random=2',
-    'https://picsum.photos/200/200?random=3',
-    'https://picsum.photos/200/200?random=4',
-    'https://picsum.photos/200/200?random=5',
-    'https://picsum.photos/200/200?random=6',
-    'https://picsum.photos/200/200?random=7',
-    'https://picsum.photos/200/200?random=8',
-    'https://picsum.photos/200/200?random=9',
-    'https://picsum.photos/200/200?random=10'
+    'https://placekitten.com/200/200',
+    'https://placekitten.com/200/202',
+    'https://placekitten.com/200/203',
+    'https://placekitten.com/200/204',
+    'https://placekitten.com/200/205',
+    'https://placekitten.com/200/206',
+    'https://placekitten.com/200/207',
+    'https://placekitten.com/200/208',
+    'https://placekitten.com/200/209',
+    'https://placekitten.com/200/210'
   ],
   
   // Door
@@ -44,5 +44,3 @@ export const CONFIG = {
   // Collision
   COLLISION_RADIUS: 1.5
 };
-
-
