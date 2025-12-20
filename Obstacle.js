@@ -328,6 +328,7 @@ export class Obstacle {
   createImageObstacle() {
     // Load image as texture and create a sprite
     const textureLoader = new THREE.TextureLoader();
+    textureLoader.crossOrigin = 'anonymous'; // Enable CORS
     
     // Random size between 3 and 6 units
     const size = 3 + Math.random() * 3;
