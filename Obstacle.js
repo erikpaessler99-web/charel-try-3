@@ -326,20 +326,45 @@ export class Obstacle {
   }
   
   createImageObstacle() {
-    // Load image as texture and create a sprite
-    const textureLoader = new THREE.TextureLoader();
-    textureLoader.crossOrigin = 'anonymous'; // Enable CORS
+    // Create a canvas-based obstacle instead of loading external images
+    // This avoids CORS issues
+    const size = (3 + Math.random() * 3) * 3; // TRIPLED size: 9-18 units
     
-    // Random size between 3 and 6 units
-    const size = 3 + Math.random() * 3;
+    // Create a canvas with a circular design
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d');
     
-    // Load texture with error handling
-    const texture = textureLoader.load(
-      this.imageUrl,
-      () => console.log('Image loaded:', this.imageUrl),
-      undefined,
-      (error) => console.error('Error loading image:', this.imageUrl, error)
-    );
+    // Random color for variety
+    const colors = [
+      '#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', 
+      '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E2',
+      '#F8B739', '#52B788'
+    ];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    
+    // Draw circle with border
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(128, 128, 100, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // White border
+    ctx.strokeStyle = '#FFFFFF';
+    ctx.lineWidth = 8;
+    ctx.beginPath();
+    ctx.arc(128, 128, 100, 0, Math.PI * 2);
+    ctx.stroke();
+    
+    // Inner circle for depth
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+    ctx.beginPath();
+    ctx.arc(128, 128, 70, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Create texture from canvas
+    const texture = new THREE.CanvasTexture(canvas);
     
     const spriteMaterial = new THREE.SpriteMaterial({
       map: texture,
@@ -354,12 +379,12 @@ export class Obstacle {
     
     // Add subtle glow effect
     const glowMaterial = new THREE.SpriteMaterial({
-      color: 0xffffff,
+      color: color,
       transparent: true,
-      opacity: 0.2
+      opacity: 0.3
     });
     const glow = new THREE.Sprite(glowMaterial);
-    glow.scale.set(size * 1.2, size * 1.2, 1);
+    glow.scale.set(size * 1.3, size * 1.3, 1);
     this.group.add(glow);
     this.glow = glow;
   }
