@@ -1,10 +1,11 @@
 import * as THREE from 'three';
 
 export class Obstacle {
-  constructor(type, position) {
+  constructor(type, position, imageUrl = null) {
     this.type = type;
     this.group = new THREE.Group();
     this.group.position.copy(position);
+    this.imageUrl = imageUrl;
     this.createObstacle();
   }
   
@@ -21,6 +22,9 @@ export class Obstacle {
         break;
       case 'rocks':
         this.createFloatingRocks();
+        break;
+      case 'image':
+        this.createImageObstacle();
         break;
     }
   }
@@ -321,6 +325,38 @@ export class Obstacle {
     }
   }
   
+  createImageObstacle() {
+    // Load image as texture and create a sprite
+    const textureLoader = new THREE.TextureLoader();
+    const texture = textureLoader.load(this.imageUrl);
+    
+    const spriteMaterial = new THREE.SpriteMaterial({
+      map: texture,
+      transparent: true
+    });
+    
+    const sprite = new THREE.Sprite(spriteMaterial);
+    
+    // Random size between 3 and 6 units
+    const size = 3 + Math.random() * 3;
+    sprite.scale.set(size, size, 1);
+    
+    this.group.add(sprite);
+    this.sprite = sprite;
+    
+    // Add a subtle glow effect around the image
+    const glowGeometry = new THREE.PlaneGeometry(size * 1.2, size * 1.2);
+    const glowMaterial = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.2,
+      side: THREE.DoubleSide
+    });
+    const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+    this.group.add(glow);
+    this.glow = glow;
+  }
+  
   update(deltaTime, forwardSpeed) {
     this.group.position.z += forwardSpeed * deltaTime;
     
@@ -372,6 +408,23 @@ export class Obstacle {
       this.group.children.forEach(child => {
         if (child.userData.rotationSpeed) {
           child.rotation.x += child.userData.rotationSpeed.x * deltaTime;
+          child.rotation.y += child.userData.rotationSpeed.y * deltaTime;
+          child.rotation.z += child.userData.rotationSpeed.z * deltaTime;
+        }
+      });
+    }
+    
+    // Animate image obstacles
+    if (this.sprite) {
+      // Gentle floating motion
+      this.sprite.position.y = Math.sin(time * 0.5) * 0.5;
+      
+      // Pulsing glow
+      if (this.glow) {
+        this.glow.material.opacity = 0.15 + Math.sin(time * 2) * 0.1;
+        this.glow.position.y = this.sprite.position.y;
+      }
+    }
           child.rotation.y += child.userData.rotationSpeed.y * deltaTime;
           child.rotation.z += child.userData.rotationSpeed.z * deltaTime;
         }
