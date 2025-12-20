@@ -244,13 +244,19 @@ export class Door {
   
   checkPassed(carpetPos) {
     // Check if carpet has passed through the door
-    if (!this.passed && this.group.position.z > 0 && this.group.position.z < 5) {
+    // Door moves from negative Z (far) to positive Z (close)
+    // Check when door is at carpet's Z position (around 0)
+    if (!this.passed && this.group.position.z > -2 && this.group.position.z < 2) {
       const inBoundsX = Math.abs(this.group.position.x - carpetPos.x) < 5;
       const inBoundsY = Math.abs(this.group.position.y - carpetPos.y) < 7;
       
       if (inBoundsX && inBoundsY) {
         this.passed = true;
         return true;
+      } else {
+        // Player missed the door - mark as failed so it doesn't trigger again
+        this.passed = true;
+        return false;
       }
     }
     return false;
