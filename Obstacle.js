@@ -438,11 +438,6 @@ export class Obstacle {
         this.glow.position.y = this.sprite.position.y;
       }
     }
-          child.rotation.y += child.userData.rotationSpeed.y * deltaTime;
-          child.rotation.z += child.userData.rotationSpeed.z * deltaTime;
-        }
-      });
-    }
   }
   
   isOffScreen() {
