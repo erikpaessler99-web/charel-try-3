@@ -326,45 +326,20 @@ export class Obstacle {
   }
   
   createImageObstacle() {
-    // Create a canvas-based obstacle instead of loading external images
-    // This avoids CORS issues
-    const size = (3 + Math.random() * 3) * 3; // TRIPLED size: 9-18 units
+    // Load actual image from URL
+    const textureLoader = new THREE.TextureLoader();
+    textureLoader.crossOrigin = 'anonymous';
     
-    // Create a canvas with a circular design
-    const canvas = document.createElement('canvas');
-    canvas.width = 256;
-    canvas.height = 256;
-    const ctx = canvas.getContext('2d');
+    // Make them MUCH larger: 15-30 units (5x original size)
+    const size = (3 + Math.random() * 3) * 5;
     
-    // Random color for variety
-    const colors = [
-      '#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', 
-      '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E2',
-      '#F8B739', '#52B788'
-    ];
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    
-    // Draw circle with border
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.arc(128, 128, 100, 0, Math.PI * 2);
-    ctx.fill();
-    
-    // White border
-    ctx.strokeStyle = '#FFFFFF';
-    ctx.lineWidth = 8;
-    ctx.beginPath();
-    ctx.arc(128, 128, 100, 0, Math.PI * 2);
-    ctx.stroke();
-    
-    // Inner circle for depth
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
-    ctx.beginPath();
-    ctx.arc(128, 128, 70, 0, Math.PI * 2);
-    ctx.fill();
-    
-    // Create texture from canvas
-    const texture = new THREE.CanvasTexture(canvas);
+    // Load texture with error handling
+    const texture = textureLoader.load(
+      this.imageUrl,
+      () => console.log('Image loaded:', this.imageUrl),
+      undefined,
+      (error) => console.error('Error loading image:', this.imageUrl, error)
+    );
     
     const spriteMaterial = new THREE.SpriteMaterial({
       map: texture,
@@ -377,9 +352,9 @@ export class Obstacle {
     this.group.add(sprite);
     this.sprite = sprite;
     
-    // Add subtle glow effect
+    // Add colored glow effect
     const glowMaterial = new THREE.SpriteMaterial({
-      color: color,
+      color: 0xffa500,
       transparent: true,
       opacity: 0.3
     });
