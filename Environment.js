@@ -68,7 +68,7 @@ export class Environment {
   
   createFloatingIslands() {
     // Create magical floating islands in the distance
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 9; i++) {  // Reduced from 15 to 9 (40% reduction)
       const islandGroup = new THREE.Group();
       
       // Island base (inverted cone/mountain shape)
@@ -257,7 +257,7 @@ export class Environment {
     
     // Animate floating islands
     this.floatingIslands.forEach(island => {
-      island.position.z += forwardSpeed * deltaTime * 0.4;
+      island.position.z += forwardSpeed * deltaTime * 0.24;  // Reduced from 0.4 to 0.24 (40% slower)
       
       if (island.position.z > 50) {
         island.position.z = island.userData.baseZ;
