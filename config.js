@@ -20,7 +20,7 @@ export const CONFIG = {
   IMAGE_OBSTACLE_MIN_INTERVAL: 3.0,
   IMAGE_OBSTACLE_MAX_INTERVAL: 6.0,
   IMAGE_OBSTACLE_URLS: [
-    'https://img.a.transfermarkt.technology/portrait/big/468539-1758188153.jpg?lm=1', // Replace with your image URLs
+    'https://img.a.transfermarkt.technology/portrait/big/468539-1758188153.jpg?lm=1',
     'https://img.a.transfermarkt.technology/portrait/big/84993-1758189215.jpg?lm=1',
     'https://img.a.transfermarkt.technology/portrait/big/529895-1758189409.jpg?lm=1',
     'https://img.a.transfermarkt.technology/portrait/big/227110-1758188233.jpg?lm=1',
@@ -34,7 +34,7 @@ export const CONFIG = {
   
   // Door
   DOOR_SPAWN_DISTANCE: 4000,
-  DOOR_SUCCESS_URL: 'https://www.google.com/', // Replace with your success URL
+  DOOR_SUCCESS_URL: 'https://www.google.com/',
   
   // Camera
   CAMERA_Y_OFFSET: 1.5,
@@ -44,4 +44,3 @@ export const CONFIG = {
   // Collision
   COLLISION_RADIUS: 1.5
 };
-
