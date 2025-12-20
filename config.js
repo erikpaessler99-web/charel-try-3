@@ -20,16 +20,16 @@ export const CONFIG = {
   IMAGE_OBSTACLE_MIN_INTERVAL: 3.0,
   IMAGE_OBSTACLE_MAX_INTERVAL: 6.0,
   IMAGE_OBSTACLE_URLS: [
-    'https://img.a.transfermarkt.technology/portrait/big/468539-1758188153.jpg?lm=1',
-    'https://img.a.transfermarkt.technology/portrait/big/84993-1758189215.jpg?lm=1',
-    'https://img.a.transfermarkt.technology/portrait/big/529895-1758189409.jpg?lm=1',
-    'https://img.a.transfermarkt.technology/portrait/big/227110-1758188233.jpg?lm=1',
-    'https://img.a.transfermarkt.technology/portrait/big/892160-1758187820.jpg?lm=1',
-    'https://img.a.transfermarkt.technology/portrait/big/381967-1758189027.jpg?lm=1',
-    'https://img.a.transfermarkt.technology/portrait/big/470038-1758189531.jpg?lm=1',
-    'https://img.a.transfermarkt.technology/portrait/big/415194-1758189571.jpg?lm=1',
-    'https://img.a.transfermarkt.technology/portrait/big/694507-1758188945.jpg?lm=1',
-    'https://img.a.transfermarkt.technology/portrait/big/157635-1758188866.jpg?lm=1'
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJXCSYRqLnJ41IS-F4QcHf9P_f5svWFiipg&s'
   ],
   
   // Door
@@ -44,3 +44,4 @@ export const CONFIG = {
   // Collision
   COLLISION_RADIUS: 1.5
 };
+
