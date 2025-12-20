@@ -38,6 +38,7 @@ class Game {
     this.obstacles = [];
     this.doors = [];
     this.nextObstacleTime = 0;
+    this.nextImageObstacleTime = 0;
     this.nextDoorDistance = CONFIG.DOOR_SPAWN_DISTANCE;
     
     this.setupCamera();
@@ -58,6 +59,10 @@ class Game {
     this.distanceElement = document.getElementById('distance');
     this.gameOverElement = document.getElementById('gameOver');
     this.finalDistanceElement = document.getElementById('finalDistance');
+    this.gameOverButton = document.getElementById('gameOverButton');
+    
+    // Default behavior is to reload
+    this.gameOverButton.onclick = () => location.reload();
   }
   
   spawnObstacle() {
@@ -71,6 +76,23 @@ class Game {
     );
     
     const obstacle = new Obstacle(type, position);
+    this.obstacles.push(obstacle);
+    this.scene.add(obstacle.group);
+  }
+  
+  spawnImageObstacle() {
+    // Pick a random image URL from the config
+    const imageUrl = CONFIG.IMAGE_OBSTACLE_URLS[
+      Math.floor(Math.random() * CONFIG.IMAGE_OBSTACLE_URLS.length)
+    ];
+    
+    const position = new THREE.Vector3(
+      (Math.random() - 0.5) * CONFIG.BOUNDS_X * 2,
+      CONFIG.BOUNDS_Y_BOTTOM + Math.random() * (CONFIG.BOUNDS_Y_TOP - CONFIG.BOUNDS_Y_BOTTOM),
+      CONFIG.OBSTACLE_SPAWN_DISTANCE
+    );
+    
+    const obstacle = new Obstacle('image', position, imageUrl);
     this.obstacles.push(obstacle);
     this.scene.add(obstacle.group);
   }
@@ -116,6 +138,14 @@ class Game {
         Math.random() * (CONFIG.OBSTACLE_MAX_INTERVAL - CONFIG.OBSTACLE_MIN_INTERVAL);
     }
     
+    // Spawn image obstacles
+    this.nextImageObstacleTime -= deltaTime;
+    if (this.nextImageObstacleTime <= 0) {
+      this.spawnImageObstacle();
+      this.nextImageObstacleTime = CONFIG.IMAGE_OBSTACLE_MIN_INTERVAL + 
+        Math.random() * (CONFIG.IMAGE_OBSTACLE_MAX_INTERVAL - CONFIG.IMAGE_OBSTACLE_MIN_INTERVAL);
+    }
+    
     // Spawn door when distance reached
     if (this.distance >= this.nextDoorDistance && this.doors.length === 0) {
       this.spawnDoor();
@@ -146,8 +176,8 @@ class Game {
       // Check if passed through door
       if (door.checkPassed(newCarpetPos)) {
         console.log('Passed through door!');
-        // Spawn next door
-        this.nextDoorDistance = this.distance + CONFIG.DOOR_SPAWN_DISTANCE;
+        // Show success screen
+        this.showSuccessScreen();
       }
       
       // Remove off-screen doors
@@ -169,6 +199,26 @@ class Game {
     
     this.gameOver = true;
     this.finalDistanceElement.textContent = Math.floor(this.distance);
+    this.gameOverElement.style.display = 'block';
+  }
+  
+  showSuccessScreen() {
+    if (this.gameOver) return;
+    
+    this.gameOver = true;
+    this.finalDistanceElement.textContent = Math.floor(this.distance);
+    
+    // Change the title to show success
+    const gameOverTitle = document.querySelector('#gameOver h1');
+    gameOverTitle.textContent = 'Success!';
+    gameOverTitle.style.color = '#00ff00';
+    
+    // Change button to redirect instead of reload
+    this.gameOverButton.textContent = 'Continue';
+    this.gameOverButton.onclick = () => {
+      window.location.href = CONFIG.DOOR_SUCCESS_URL;
+    };
+    
     this.gameOverElement.style.display = 'block';
   }
   
