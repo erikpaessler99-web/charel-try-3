@@ -33,7 +33,7 @@ export const CONFIG = {
   ],
   
   // Door
-  DOOR_SPAWN_DISTANCE: 4000,
+  DOOR_SPAWN_DISTANCE: 3500,
   DOOR_SUCCESS_URL: 'https://www.google.com/',
   
   // Camera
