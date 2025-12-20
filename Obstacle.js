@@ -335,16 +335,9 @@ export class Obstacle {
     // Load texture with error handling
     const texture = textureLoader.load(
       this.imageUrl,
-      // onLoad
-      () => {
-        console.log('Image loaded successfully:', this.imageUrl);
-      },
-      // onProgress
+      () => console.log('Image loaded:', this.imageUrl),
       undefined,
-      // onError
-      (error) => {
-        console.error('Error loading image:', this.imageUrl, error);
-      }
+      (error) => console.error('Error loading image:', this.imageUrl, error)
     );
     
     const spriteMaterial = new THREE.SpriteMaterial({
@@ -358,7 +351,7 @@ export class Obstacle {
     this.group.add(sprite);
     this.sprite = sprite;
     
-    // Add a subtle glow effect around the image (also as sprite so it faces camera)
+    // Add subtle glow effect
     const glowMaterial = new THREE.SpriteMaterial({
       color: 0xffffff,
       transparent: true,
@@ -429,10 +422,8 @@ export class Obstacle {
     
     // Animate image obstacles
     if (this.sprite) {
-      // Gentle floating motion
       this.sprite.position.y = Math.sin(time * 0.5) * 0.5;
       
-      // Pulsing glow
       if (this.glow) {
         this.glow.material.opacity = 0.15 + Math.sin(time * 2) * 0.1;
         this.glow.position.y = this.sprite.position.y;
