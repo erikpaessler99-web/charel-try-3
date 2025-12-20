@@ -20,21 +20,21 @@ export const CONFIG = {
   IMAGE_OBSTACLE_MIN_INTERVAL: 3.0,
   IMAGE_OBSTACLE_MAX_INTERVAL: 6.0,
   IMAGE_OBSTACLE_URLS: [
-    'https://example.com/image1.png', // Replace with your image URLs
-    'https://example.com/image2.png',
-    'https://example.com/image3.png',
-    'https://example.com/image4.png',
-    'https://example.com/image5.png',
-    'https://example.com/image6.png',
-    'https://example.com/image7.png',
-    'https://example.com/image8.png',
-    'https://example.com/image9.png',
-    'https://example.com/image10.png'
+    'https://img.a.transfermarkt.technology/portrait/big/468539-1758188153.jpg?lm=1', // Replace with your image URLs
+    'https://img.a.transfermarkt.technology/portrait/big/84993-1758189215.jpg?lm=1',
+    'https://img.a.transfermarkt.technology/portrait/big/529895-1758189409.jpg?lm=1',
+    'https://img.a.transfermarkt.technology/portrait/big/227110-1758188233.jpg?lm=1',
+    'https://img.a.transfermarkt.technology/portrait/big/892160-1758187820.jpg?lm=1',
+    'https://img.a.transfermarkt.technology/portrait/big/381967-1758189027.jpg?lm=1',
+    'https://img.a.transfermarkt.technology/portrait/big/470038-1758189531.jpg?lm=1',
+    'https://img.a.transfermarkt.technology/portrait/big/415194-1758189571.jpg?lm=1',
+    'https://img.a.transfermarkt.technology/portrait/big/694507-1758188945.jpg?lm=1',
+    'https://img.a.transfermarkt.technology/portrait/big/157635-1758188866.jpg?lm=1'
   ],
   
   // Door
   DOOR_SPAWN_DISTANCE: 4000,
-  DOOR_SUCCESS_URL: 'https://example.com/success', // Replace with your success URL
+  DOOR_SUCCESS_URL: 'https://www.google.com/', // Replace with your success URL
   
   // Camera
   CAMERA_Y_OFFSET: 1.5,
@@ -44,3 +44,4 @@ export const CONFIG = {
   // Collision
   COLLISION_RADIUS: 1.5
 };
+
