@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { CONFIG } from './config.js';
-import { Carpet } from './Carpet.js';
+import { Carpet } from './carpet.js';
 import { InputController } from './InputController.js';
 import { Obstacle } from './Obstacle.js';
 import { Door } from './Door.js';
@@ -19,6 +19,8 @@ class Game {
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     document.body.appendChild(this.renderer.domElement);
     
     // Game state
