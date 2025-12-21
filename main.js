@@ -244,3 +244,7 @@ class Game {
 
 // Start the game
 new Game();
+// Hide instructions after 5 seconds
+setTimeout(() => {
+  document.getElementById('instructions').style.display = 'none';
+}, 5000);
