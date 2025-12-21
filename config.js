@@ -34,7 +34,7 @@ export const CONFIG = {
   
   // Door
   DOOR_SPAWN_DISTANCE: 3500,
-  DOOR_SUCCESS_URL: 'https://www.google.com/',
+  DOOR_SUCCESS_URL: 'https://erikpaessler99-web.github.io/charel-try-4/',
   
   // Camera
   CAMERA_Y_OFFSET: 1.5,
@@ -44,4 +44,5 @@ export const CONFIG = {
   // Collision
   COLLISION_RADIUS: 1.5
 };
+
 
