@@ -20,16 +20,16 @@ export const CONFIG = {
   IMAGE_OBSTACLE_MIN_INTERVAL: 0.8,  // Spawn every 0.8-1.5 seconds (VERY frequent)
   IMAGE_OBSTACLE_MAX_INTERVAL: 1.5,
   IMAGE_OBSTACLE_URLS: [
-    'https://placekitten.com/200/200',
-    'https://placekitten.com/200/202',
-    'https://placekitten.com/200/203',
-    'https://placekitten.com/200/204',
-    'https://placekitten.com/200/205',
-    'https://placekitten.com/200/206',
-    'https://placekitten.com/200/207',
-    'https://placekitten.com/200/208',
-    'https://placekitten.com/200/209',
-    'https://placekitten.com/200/210'
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXrOG_yc5pb4MAa2n94_dSbJJOjHRdMGIp7Q&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBQOqXWouoMYESo1m2ymD_5z_IDwhxJyDRlA&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWILSUjZdywPXjM6ISzskV9pAJGGhP0R0QQA&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoHT1QzjY4tkQjMNhdFLx1JAJlEGOSW1CpfA&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa7aiYMAft_eiYH90GnVbnUrBXosNbpPRxew&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmaTTtsvJkEKD57mogh_Q4dzyG5GUgX1MgAA&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDhCVPpMtLlHP5Dq_YYP9TZhEuw1WMgSifIw&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUIUoEgDZWpOgStAHiFoq1HFsaio0BMfuOKg&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo4C_-DxAhGMJwAr-jZqJASDC_OO1Da3sBKQ&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb3mcANm08MofDLVJNI5wEjWslI7uya7kQJA&s'
   ],
   
   // Door
@@ -44,3 +44,4 @@ export const CONFIG = {
   // Collision
   COLLISION_RADIUS: 1.5
 };
+
