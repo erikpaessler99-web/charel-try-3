@@ -21,13 +21,13 @@ export const CONFIG = {
   IMAGE_OBSTACLE_MAX_INTERVAL: 1.5,
   IMAGE_OBSTACLE_URLS: [
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXrOG_yc5pb4MAa2n94_dSbJJOjHRdMGIp7Q&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBQOqXWouoMYESo1m2ymD_5z_IDwhxJyDRlA&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI00smLNdanSFOZUv_Wfna4jEVaQCjCE7mlQ&s',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWILSUjZdywPXjM6ISzskV9pAJGGhP0R0QQA&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoHT1QzjY4tkQjMNhdFLx1JAJlEGOSW1CpfA&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbngxt9nbRIMF5M7Ya9caciZQfsjAfADd2pA&s',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa7aiYMAft_eiYH90GnVbnUrBXosNbpPRxew&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmaTTtsvJkEKD57mogh_Q4dzyG5GUgX1MgAA&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzKvJ0QEkwpbHbY19_t2yUYR8CZLN86adeFw&s',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDhCVPpMtLlHP5Dq_YYP9TZhEuw1WMgSifIw&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUIUoEgDZWpOgStAHiFoq1HFsaio0BMfuOKg&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF-e6yzgPhLtrG8X1Ale7gHUpst_smrLZRBA&s',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo4C_-DxAhGMJwAr-jZqJASDC_OO1Da3sBKQ&s',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb3mcANm08MofDLVJNI5wEjWslI7uya7kQJA&s'
   ],
@@ -44,5 +44,6 @@ export const CONFIG = {
   // Collision
   COLLISION_RADIUS: 1.5
 };
+
 
 
