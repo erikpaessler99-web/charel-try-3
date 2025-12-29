@@ -331,7 +331,7 @@ export class Obstacle {
     textureLoader.crossOrigin = 'anonymous';
     
     // Make them MUCH larger: 15-30 units (5x original size)
-    const size = (3 + Math.random() * 3) * 5;
+    const size = (3 + Math.random() * 3) * 3;
     
     // Load texture with error handling
     const texture = textureLoader.load(
@@ -453,3 +453,4 @@ export class Obstacle {
     return false;
   }
 }
+
